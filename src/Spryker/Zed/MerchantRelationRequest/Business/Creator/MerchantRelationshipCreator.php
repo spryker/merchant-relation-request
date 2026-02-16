@@ -58,7 +58,7 @@ class MerchantRelationshipCreator implements MerchantRelationshipCreatorInterfac
 
     /**
      * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     * @param list<\Generated\Shared\Transfer\CompanyBusinessUnitTransfer> $assigneeCompanyBusinessUnits
+     * @param array<\Generated\Shared\Transfer\CompanyBusinessUnitTransfer> $assigneeCompanyBusinessUnits
      *
      * @throws \Spryker\Zed\MerchantRelationRequest\Business\Exception\MerchantRelationshipNotCreatedException
      *
@@ -88,7 +88,7 @@ class MerchantRelationshipCreator implements MerchantRelationshipCreatorInterfac
 
     /**
      * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     * @param list<\Generated\Shared\Transfer\CompanyBusinessUnitTransfer> $assigneeCompanyBusinessUnits
+     * @param array<\Generated\Shared\Transfer\CompanyBusinessUnitTransfer> $assigneeCompanyBusinessUnits
      *
      * @return \Generated\Shared\Transfer\MerchantRelationshipRequestTransfer
      */

@@ -36,7 +36,7 @@ class MerchantReader implements MerchantReaderInterface
     }
 
     /**
-     * @param list<int> $merchantIds
+     * @param array<int> $merchantIds
      *
      * @return array<int, \Generated\Shared\Transfer\MerchantTransfer>
      */

@@ -121,7 +121,7 @@ class CompanyAccountCompatibilityValidatorRule implements MerchantRelationValida
     /**
      * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
      *
-     * @return list<int>
+     * @return array<int>
      */
     protected function extractCompanyBusinessUnitIds(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): array
     {

@@ -24,7 +24,7 @@ interface MerchantRelationRequestEntityManagerInterface
 
     /**
      * @param int $idMerchantRelationRequest
-     * @param list<int> $companyBusinessUnitIds
+     * @param array<int> $companyBusinessUnitIds
      *
      * @return void
      */

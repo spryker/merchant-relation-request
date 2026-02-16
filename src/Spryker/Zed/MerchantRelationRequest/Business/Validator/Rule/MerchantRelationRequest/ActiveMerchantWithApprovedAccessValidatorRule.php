@@ -72,7 +72,7 @@ class ActiveMerchantWithApprovedAccessValidatorRule implements MerchantRelationV
     /**
      * @param \ArrayObject<array-key, \Generated\Shared\Transfer\MerchantRelationRequestTransfer> $merchantRelationRequestTransfers
      *
-     * @return list<int>
+     * @return array<int>
      */
     protected function extractMerchantIds(ArrayObject $merchantRelationRequestTransfers): array
     {
