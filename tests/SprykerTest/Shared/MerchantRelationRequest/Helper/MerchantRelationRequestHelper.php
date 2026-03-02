@@ -68,12 +68,6 @@ class MerchantRelationRequestHelper extends Module
         return $persistedMerchantRelationRequest;
     }
 
-    /**
-     * @param int $idMerchantRelationRequest
-     * @param int $idCompanyBusinessUnit
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitTransfer
-     */
     protected function createAssigneeCompanyBusinessUnit(
         int $idMerchantRelationRequest,
         int $idCompanyBusinessUnit
@@ -94,11 +88,6 @@ class MerchantRelationRequestHelper extends Module
         );
     }
 
-    /**
-     * @param int $idMerchantRelationRequest
-     *
-     * @return void
-     */
     protected function deleteMerchantRelationRequest(int $idMerchantRelationRequest): void
     {
         $merchantRelationRequestEntity = $this->getMerchantRelationRequestQuery()
@@ -109,11 +98,6 @@ class MerchantRelationRequestHelper extends Module
         }
     }
 
-    /**
-     * @param int $idMerchantRelationRequestToCompanyBusinessUnit
-     *
-     * @return void
-     */
     protected function deleteAssigneeCompanyBusinessUnit(
         int $idMerchantRelationRequestToCompanyBusinessUnit
     ): void {
@@ -125,17 +109,11 @@ class MerchantRelationRequestHelper extends Module
         }
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery
-     */
     protected function getMerchantRelationRequestQuery(): SpyMerchantRelationRequestQuery
     {
         return SpyMerchantRelationRequestQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestToCompanyBusinessUnitQuery
-     */
     protected function getMerchantRelationRequestToCompanyBusinessUnitQuery(): SpyMerchantRelationRequestToCompanyBusinessUnitQuery
     {
         return SpyMerchantRelationRequestToCompanyBusinessUnitQuery::create();

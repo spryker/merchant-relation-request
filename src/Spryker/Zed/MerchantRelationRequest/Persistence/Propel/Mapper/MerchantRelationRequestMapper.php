@@ -32,11 +32,6 @@ class MerchantRelationRequestMapper
      */
     protected CompanyBusinessUnitMapper $companyBusinessUnitMapper;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\MerchantMapper $merchantMapper
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\CompanyUserMapper $companyUserMapper
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\CompanyBusinessUnitMapper $companyBusinessUnitMapper
-     */
     public function __construct(
         MerchantMapper $merchantMapper,
         CompanyUserMapper $companyUserMapper,
@@ -69,12 +64,6 @@ class MerchantRelationRequestMapper
         return $merchantRelationRequestCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     * @param \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequest $merchantRelationRequestEntity
-     *
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequest
-     */
     public function mapMerchantRelationRequestTransferToMerchantRelationRequestEntity(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer,
         SpyMerchantRelationRequest $merchantRelationRequestEntity
@@ -88,12 +77,6 @@ class MerchantRelationRequestMapper
             );
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequest $merchantRelationRequestEntity
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function mapMerchantRelationRequestEntityToMerchantRelationRequestTransfer(
         SpyMerchantRelationRequest $merchantRelationRequestEntity,
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer

@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer;
 
 interface MerchantRelationRequestValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     public function validate(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
     ): MerchantRelationRequestCollectionResponseTransfer;

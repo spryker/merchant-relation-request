@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer;
 
 interface MerchantRelationRequestCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     public function createMerchantRelationRequestCollection(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer;

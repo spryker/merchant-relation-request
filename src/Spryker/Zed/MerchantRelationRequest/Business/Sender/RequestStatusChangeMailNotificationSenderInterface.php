@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer;
 
 interface RequestStatusChangeMailNotificationSenderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return void
-     */
     public function sendRequestStatusChangeMailNotification(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
     ): void;

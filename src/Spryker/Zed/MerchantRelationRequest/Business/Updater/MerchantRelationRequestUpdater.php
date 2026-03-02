@@ -66,11 +66,6 @@ class MerchantRelationRequestUpdater implements MerchantRelationRequestUpdaterIn
         $this->merchantRelationRequestPostUpdatePlugins = $merchantRelationRequestPostUpdatePlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     public function updateMerchantRelationRequestCollection(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
@@ -89,11 +84,6 @@ class MerchantRelationRequestUpdater implements MerchantRelationRequestUpdaterIn
         return $merchantRelationRequestCollectionResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     protected function persist(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
@@ -111,11 +101,6 @@ class MerchantRelationRequestUpdater implements MerchantRelationRequestUpdaterIn
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     protected function validate(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
@@ -147,11 +132,6 @@ class MerchantRelationRequestUpdater implements MerchantRelationRequestUpdaterIn
         return $persistedMerchantRelationRequestTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer): void
     {
         $merchantRelationRequestCollectionRequestTransfer
@@ -190,11 +170,6 @@ class MerchantRelationRequestUpdater implements MerchantRelationRequestUpdaterIn
         throw new MerchantRelationRequestUpdateStrategyNotFoundException();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return void
-     */
     protected function executeMerchantRelationRequestPostUpdatePlugins(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
     ): void {

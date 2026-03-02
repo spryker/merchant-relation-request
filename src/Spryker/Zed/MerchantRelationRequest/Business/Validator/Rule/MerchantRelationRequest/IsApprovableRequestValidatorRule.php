@@ -47,12 +47,6 @@ class IsApprovableRequestValidatorRule extends AbstractStatusApplicableRequestVa
      */
     protected AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     * @param \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig $merchantRelationRequestConfig
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantRelationRequestReaderInterface $merchantRelationRequestReader
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Extractor\AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor
-     */
     public function __construct(
         ErrorAdderInterface $errorAdder,
         MerchantRelationRequestConfig $merchantRelationRequestConfig,
@@ -65,11 +59,6 @@ class IsApprovableRequestValidatorRule extends AbstractStatusApplicableRequestVa
         $this->assigneeCompanyBusinessUnitExtractor = $assigneeCompanyBusinessUnitExtractor;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isApplicable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         $newStatus = $merchantRelationRequestTransfer->getStatusOrFail();
@@ -112,12 +101,6 @@ class IsApprovableRequestValidatorRule extends AbstractStatusApplicableRequestVa
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $persistedMerchantRelationRequest
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isRequestApprovable(
         MerchantRelationRequestTransfer $persistedMerchantRelationRequest,
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
@@ -139,12 +122,6 @@ class IsApprovableRequestValidatorRule extends AbstractStatusApplicableRequestVa
         return !$this->hasNewAssigneeBusinessUnits($merchantRelationRequestTransfer, $persistedMerchantRelationRequest);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $persistedMerchantRelationRequest
-     *
-     * @return bool
-     */
     protected function hasNewAssigneeBusinessUnits(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer,
         MerchantRelationRequestTransfer $persistedMerchantRelationRequest

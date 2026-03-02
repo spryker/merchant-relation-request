@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\MerchantRelationRequestTransfer;
 
 interface AssigneeCompanyBusinessUnitCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function createAssigneeCompanyBusinessUnits(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer;

@@ -131,9 +131,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
      */
     protected MerchantRelationRequestBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -141,9 +138,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->tester->ensureMerchantRelationshipTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCancelMerchantRelationRequestInPersistence(): void
     {
         // Arrange
@@ -165,9 +159,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_CANCELED)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldRejectMerchantRelationRequestInPersistence(): void
     {
         // Arrange
@@ -187,9 +178,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_REJECTED)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldApproveMerchantRelationRequestInPersistence(): void
     {
         // Arrange
@@ -211,9 +199,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getMerchantRelationRequestToCompanyBusinessUnitQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdatePendingMerchantRelationRequestInPersistence(): void
     {
         // Arrange
@@ -239,9 +224,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getMerchantRelationRequestToCompanyBusinessUnitQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdatePendingMerchantRelationRequestWithNewAssigneeCompanyBusinessUnitInPersistence(): void
     {
         // Arrange
@@ -268,9 +250,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(3, $this->tester->getMerchantRelationRequestToCompanyBusinessUnitQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCreateMerchantRelationshipsInPersistence(): void
     {
         // Arrange
@@ -292,9 +271,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(2, $this->tester->getMerchantRelationshipToCompanyBusinessUnitQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCreateSplittedMerchantRelationshipsInPersistence(): void
     {
         // Arrange
@@ -316,9 +292,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(2, $this->tester->getMerchantRelationshipQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowMerchantRelationshipNotCreatedException(): void
     {
         // Arrange
@@ -344,9 +317,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->tester->getFacade()->updateMerchantRelationRequestCollection($merchantRelationRequestCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testMerchantRelationRequestUpdateStrategyNotFoundException(): void
     {
         // Arrange
@@ -367,9 +337,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->tester->getFacade()->updateMerchantRelationRequestCollection($merchantRelationRequestCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnUpdatedMerchantRelationRequest(): void
     {
         // Arrange
@@ -416,9 +383,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->tester->getFacade()->updateMerchantRelationRequestCollection($merchantRelationRequestCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateDecisionNoteLengthValidatorRule(): void
     {
         // Arrange
@@ -444,9 +408,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsApprovableRequestValidatorRuleWithFakeUuid(): void
     {
         // Arrange
@@ -470,9 +431,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsApprovableRequestValidatorRuleWithEmptyAssigneeCompanyBusinessUnits(): void
     {
         // Arrange
@@ -498,9 +456,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsApprovableRequestValidatorRuleNotInPendingStatus(): void
     {
         // Arrange
@@ -526,9 +481,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsApprovableRequestValidatorRuleWithAddedAdditionalAssigneeBusinessUnit(): void
     {
         // Arrange
@@ -559,9 +511,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsApprovableRequestValidatorRuleWithNewAssigneeBusinessUnit(): void
     {
         // Arrange
@@ -591,9 +540,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsRejectableRequestValidatorRuleWithFakeUuid(): void
     {
         // Arrange
@@ -617,9 +563,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsRejectableRequestValidatorRuleNotInPendingStatus(): void
     {
         // Arrange
@@ -644,9 +587,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsCancelableRequestValidatorRuleWithFakeUuid(): void
     {
         // Arrange
@@ -670,9 +610,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsCancelableRequestValidatorRuleNotInPendingStatus(): void
     {
         // Arrange
@@ -697,9 +634,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsAllowedToUpdateToPendingValidatorRuleWithFakeUuid(): void
     {
         // Arrange
@@ -723,9 +657,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsAllowedToUpdateToPendingValidatorRuleNotInPendingStatus(): void
     {
         // Arrange
@@ -750,9 +681,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateIsAllowedToUpdateToPendingValidatorRuleAssigneeBusinessUnitIsNOtCompatibleWithCompany(): void
     {
         // Arrange
@@ -779,9 +707,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCollectAllValidationMessagesIntoOneResponse(): void
     {
         // Arrange
@@ -803,9 +728,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(2, $merchantRelationRequestCollectionResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateValidEntitiesWhenIsTransactionalFlagDisabled(): void
     {
         // Arrange
@@ -834,9 +756,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_REJECTED)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldAvoidPersistingOfValidEntitiesWhenIsTransactionalFlagEnabled(): void
     {
         // Arrange
@@ -864,9 +783,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(2, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_PENDING)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldAvoidPersistingOfNotValidEntities(): void
     {
         // Arrange
@@ -896,9 +812,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(2, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_PENDING)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteMerchantRelationRequestPostUpdatePluginStack(): void
     {
         // Assert
@@ -987,12 +900,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
             ->build();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return void
-     */
     protected function assertUpdatedMerchantRelationRequest(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer,
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer

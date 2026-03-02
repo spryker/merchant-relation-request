@@ -65,11 +65,6 @@ class MerchantRelationRequestCreator implements MerchantRelationRequestCreatorIn
         $this->merchantRelationRequestPostCreatePlugins = $merchantRelationRequestPostCreatePlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     public function createMerchantRelationRequestCollection(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
@@ -88,11 +83,6 @@ class MerchantRelationRequestCreator implements MerchantRelationRequestCreatorIn
         return $merchantRelationRequestCollectionResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     protected function persist(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
@@ -110,11 +100,6 @@ class MerchantRelationRequestCreator implements MerchantRelationRequestCreatorIn
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     protected function validate(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
@@ -146,11 +131,6 @@ class MerchantRelationRequestCreator implements MerchantRelationRequestCreatorIn
         return $persistedMerchantRelationRequestTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return void
-     */
     protected function executeMerchantRelationRequestPostCreatePlugins(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
     ): void {
@@ -159,11 +139,6 @@ class MerchantRelationRequestCreator implements MerchantRelationRequestCreatorIn
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): void {

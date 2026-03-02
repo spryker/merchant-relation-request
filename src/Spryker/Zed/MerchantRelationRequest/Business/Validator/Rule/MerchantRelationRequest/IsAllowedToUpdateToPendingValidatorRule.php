@@ -47,12 +47,6 @@ class IsAllowedToUpdateToPendingValidatorRule extends AbstractStatusApplicableRe
      */
     protected MerchantRelationValidatorRuleInterface $companyAccountCompatibilityValidatorRule;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     * @param \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig $merchantRelationRequestConfig
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantRelationRequestReaderInterface $merchantRelationRequestReader
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface $companyAccountCompatibilityValidatorRule
-     */
     public function __construct(
         ErrorAdderInterface $errorAdder,
         MerchantRelationRequestConfig $merchantRelationRequestConfig,
@@ -65,11 +59,6 @@ class IsAllowedToUpdateToPendingValidatorRule extends AbstractStatusApplicableRe
         $this->companyAccountCompatibilityValidatorRule = $companyAccountCompatibilityValidatorRule;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isApplicable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         $newStatus = $merchantRelationRequestTransfer->getStatusOrFail();
@@ -123,11 +112,6 @@ class IsAllowedToUpdateToPendingValidatorRule extends AbstractStatusApplicableRe
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isRequestCanBecomePending(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         return in_array(

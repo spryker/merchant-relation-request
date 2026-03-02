@@ -13,11 +13,6 @@ use Generated\Shared\Transfer\MerchantRelationRequestTransfer;
 
 interface MerchantRelationRequestReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     public function getMerchantRelationRequestCollection(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
     ): MerchantRelationRequestCollectionTransfer;
@@ -29,10 +24,5 @@ interface MerchantRelationRequestReaderInterface
      */
     public function getMerchantRelationRequestsIndexedByUuid(array $uuids): array;
 
-    /**
-     * @param string $merchantRelationRequestUuid
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer|null
-     */
     public function findMerchantRelationRequestByUuid(string $merchantRelationRequestUuid): ?MerchantRelationRequestTransfer;
 }

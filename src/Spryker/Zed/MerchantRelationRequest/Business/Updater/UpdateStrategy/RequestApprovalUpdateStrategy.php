@@ -40,12 +40,6 @@ class RequestApprovalUpdateStrategy implements MerchantRelationRequestUpdaterStr
      */
     protected MerchantRelationshipCreatorInterface $merchantRelationshipCreator;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantRelationRequestReaderInterface $merchantRelationRequestReader
-     * @param \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig $merchantRelationRequestConfig
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Creator\MerchantRelationshipCreatorInterface $merchantRelationshipCreator
-     */
     public function __construct(
         MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager,
         MerchantRelationRequestReaderInterface $merchantRelationRequestReader,
@@ -58,11 +52,6 @@ class RequestApprovalUpdateStrategy implements MerchantRelationRequestUpdaterStr
         $this->merchantRelationshipCreator = $merchantRelationshipCreator;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     public function isApplicable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         return $merchantRelationRequestTransfer->getStatusOrFail() === SharedMerchantRelationRequestConfig::STATUS_APPROVED;
@@ -97,11 +86,6 @@ class RequestApprovalUpdateStrategy implements MerchantRelationRequestUpdaterStr
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     protected function executeUpdateTransaction(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): MerchantRelationRequestTransfer
     {
         $merchantRelationRequestTransfer = $this->merchantRelationRequestEntityManager

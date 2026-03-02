@@ -24,9 +24,6 @@ class UniqueAssigneeBusinessUnitsInRequestValidatorRule implements MerchantRelat
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -53,11 +50,6 @@ class UniqueAssigneeBusinessUnitsInRequestValidatorRule implements MerchantRelat
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     public function hasDuplicatedAssigneeBusinessUnits(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         $companyBusinessUnitIds = [];

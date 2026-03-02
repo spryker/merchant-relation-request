@@ -194,9 +194,6 @@ class SendRequestStatusChangeMailNotificationTest extends Unit
         return $mailFacadeMock;
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\MerchantRelationRequestFacadeInterface
-     */
     protected function getMerchantRelationRequestFacade(): MerchantRelationRequestFacadeInterface
     {
         $merchantRelationRequestConfigMock = $this->getMockBuilder(MerchantRelationRequestConfig::class)

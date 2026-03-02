@@ -23,20 +23,12 @@ class MerchantRelationshipCreator implements MerchantRelationshipCreatorInterfac
      */
     protected MerchantRelationRequestToMerchantRelationshipFacadeInterface $merchantRelationshipFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToMerchantRelationshipFacadeInterface $merchantRelationshipFacade
-     */
     public function __construct(
         MerchantRelationRequestToMerchantRelationshipFacadeInterface $merchantRelationshipFacade
     ) {
         $this->merchantRelationshipFacade = $merchantRelationshipFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return void
-     */
     public function createMerchantRelationships(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): void
     {
         if (!$merchantRelationRequestTransfer->getIsSplitEnabled()) {

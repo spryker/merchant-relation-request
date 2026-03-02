@@ -32,10 +32,6 @@ class RequestStatusChangeMailNotificationSender implements RequestStatusChangeMa
      */
     protected MerchantRelationRequestConfig $merchantRelationRequestConfig;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToMailFacadeInterface $mailFacade
-     * @param \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig $merchantRelationRequestConfig
-     */
     public function __construct(
         MerchantRelationRequestToMailFacadeInterface $mailFacade,
         MerchantRelationRequestConfig $merchantRelationRequestConfig
@@ -44,11 +40,6 @@ class RequestStatusChangeMailNotificationSender implements RequestStatusChangeMa
         $this->merchantRelationRequestConfig = $merchantRelationRequestConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return void
-     */
     public function sendRequestStatusChangeMailNotification(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
     ): void {
@@ -60,11 +51,6 @@ class RequestStatusChangeMailNotificationSender implements RequestStatusChangeMa
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isMailNotificationNeeded(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         return in_array(
@@ -74,11 +60,6 @@ class RequestStatusChangeMailNotificationSender implements RequestStatusChangeMa
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return void
-     */
     protected function handleMail(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): void
     {
         $this->mailFacade->handleMail(
@@ -90,11 +71,6 @@ class RequestStatusChangeMailNotificationSender implements RequestStatusChangeMa
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return string
-     */
     protected function getMerchantRelationRequestLink(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): string {

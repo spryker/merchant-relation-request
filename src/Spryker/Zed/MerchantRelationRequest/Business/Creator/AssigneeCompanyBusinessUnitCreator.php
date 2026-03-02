@@ -26,10 +26,6 @@ class AssigneeCompanyBusinessUnitCreator implements AssigneeCompanyBusinessUnitC
      */
     protected AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Extractor\AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor
-     */
     public function __construct(
         MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager,
         AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor
@@ -38,11 +34,6 @@ class AssigneeCompanyBusinessUnitCreator implements AssigneeCompanyBusinessUnitC
         $this->assigneeCompanyBusinessUnitExtractor = $assigneeCompanyBusinessUnitExtractor;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function createAssigneeCompanyBusinessUnits(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer {
@@ -51,11 +42,6 @@ class AssigneeCompanyBusinessUnitCreator implements AssigneeCompanyBusinessUnitC
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     protected function executeCreateAssigneeCompanyBusinessUnitsTransaction(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer {

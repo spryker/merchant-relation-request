@@ -49,18 +49,12 @@ class GetMerchantRelationRequestCollectionTest extends Unit
      */
     protected MerchantRelationRequestBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
         $this->tester->ensureMerchantRelationRequestTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByUuid(): void
     {
         // Arrange
@@ -83,9 +77,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByUuids(): void
     {
         // Arrange
@@ -105,9 +96,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(2, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnEmptyCollectionWhenFilterByFakeUuid(): void
     {
         // Arrange
@@ -126,9 +114,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertEmpty($merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsById(): void
     {
         // Arrange
@@ -151,9 +136,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByIds(): void
     {
         // Arrange
@@ -173,9 +155,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(2, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnEmptyCollectionWhenFilterByFakeId(): void
     {
         // Arrange
@@ -194,9 +173,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertEmpty($merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByStatuses(): void
     {
         // Arrange
@@ -219,9 +195,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(2, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByIdCompany(): void
     {
         // Arrange
@@ -242,9 +215,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(1, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByCompanyIds(): void
     {
         // Arrange
@@ -264,9 +234,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(2, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByIdMerchant(): void
     {
         // Arrange
@@ -287,9 +254,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(1, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByMerchantIds(): void
     {
         // Arrange
@@ -309,9 +273,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(2, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByIdCompanyUser(): void
     {
         // Arrange
@@ -332,9 +293,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(1, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByCompanyUserIds(): void
     {
         // Arrange
@@ -354,9 +312,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(2, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByIdOwnerCompanyBusinessUnit(): void
     {
         // Arrange
@@ -377,9 +332,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(1, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByCreatedFrom(): void
     {
         // Arrange
@@ -402,9 +354,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(1, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByCreatedTo(): void
     {
         // Arrange
@@ -427,9 +376,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(1, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByCreatedFromAndCreatedTo(): void
     {
         // Arrange
@@ -458,9 +404,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(2, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnCollectionOfRequestsWithLimitAndOffset(): void
     {
         // Arrange
@@ -501,9 +444,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnCollectionOfRequestsWithPageAndMaxPerPage(): void
     {
         // Arrange
@@ -544,9 +484,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnCollectionOfRequestsWithEmptyPagination(): void
     {
         // Arrange
@@ -567,9 +504,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertCount(5, $merchantRelationRequestCollectionTransfer->getMerchantRelationRequests());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnsRequestsSortedByFieldDesc(): void
     {
         // Arrange
@@ -596,9 +530,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame('approved', $merchantRelationRequests->offsetGet(2)->getStatus());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldContainCompanyUserInRequest(): void
     {
         // Arrange
@@ -620,9 +551,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldContainMerchantInRequest(): void
     {
         // Arrange
@@ -644,9 +572,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldContainOwnerCompanyBusinessUnitInRequest(): void
     {
         // Arrange
@@ -668,9 +593,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldContainCompanyInOwnerCompanyBusinessUnitRequest(): void
     {
         // Arrange
@@ -692,9 +614,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldContainAssigneeCompanyBusinessUnitsInRequest(): void
     {
         // Arrange
@@ -717,9 +636,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldContainEmptyAssigneeCompanyBusinessUnitsInRequest(): void
     {
         // Arrange
@@ -743,9 +659,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotContainAssigneeCompanyBusinessUnitsInRequest(): void
     {
         // Arrange
@@ -767,9 +680,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldContainMerchantRelationshipsInRequest(): void
     {
         // Arrange
@@ -795,9 +705,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldContainEmptyMerchantRelationshipsInRequest(): void
     {
         // Arrange
@@ -820,9 +727,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotContainMerchantRelationshipsInRequest(): void
     {
         // Arrange
@@ -846,9 +750,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteMerchantRelationRequestExpanderPluginStack(): void
     {
         // Assert
@@ -866,9 +767,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->tester->getFacade()->getMerchantRelationRequestCollection(new MerchantRelationRequestCriteriaTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteMerchantRelationRequestExpanderPluginStackWithConditions(): void
     {
         // Assert
@@ -892,9 +790,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->tester->getFacade()->getMerchantRelationRequestCollection($merchantRelationRequestCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnMerchantRelationRequestWithCustomerInsideCompanyUser(): void
     {
         // Arrange
@@ -923,9 +818,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame($customerFromRequest->getLastName(), $customerTransfer->getLastName());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSearchByOwnerCompanyBusinessUnitName(): void
     {
         // Assert
@@ -961,9 +853,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSearchByOwnerCompanyBusinessUnitCompanyName(): void
     {
         // Assert
@@ -999,9 +888,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSearchByAssigneeCompanyBusinessUnitName(): void
     {
         // Assert
@@ -1042,9 +928,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSearchByFewFields(): void
     {
         // Assert
@@ -1096,9 +979,6 @@ class GetMerchantRelationRequestCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSearchByOwnerCompanyBusinessUnitNameWithMerchantIdsFilter(): void
     {
         // Arrange

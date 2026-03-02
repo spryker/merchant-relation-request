@@ -18,20 +18,11 @@ class CompanyUserMapper
      */
     protected CustomerMapper $customerMapper;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\CustomerMapper $customerMapper
-     */
     public function __construct(CustomerMapper $customerMapper)
     {
         $this->customerMapper = $customerMapper;
     }
 
-    /**
-     * @param \Orm\Zed\CompanyUser\Persistence\SpyCompanyUser $companyUserEntity
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function mapCompanyUserEntityToCompanyUserTransfer(
         SpyCompanyUser $companyUserEntity,
         CompanyUserTransfer $companyUserTransfer

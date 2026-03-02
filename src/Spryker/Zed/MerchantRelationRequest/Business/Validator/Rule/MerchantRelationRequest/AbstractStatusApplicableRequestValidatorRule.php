@@ -20,11 +20,6 @@ abstract class AbstractStatusApplicableRequestValidatorRule implements MerchantR
      */
     protected MerchantRelationRequestReaderInterface $merchantRelationRequestReader;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     abstract protected function isApplicable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool;
 
     /**

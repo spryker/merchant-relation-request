@@ -44,12 +44,6 @@ class CompanyAccountCompatibilityValidatorRule implements MerchantRelationValida
      */
     protected AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     * @param \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade
-     * @param \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToCompanyUserFacadeInterface $companyUserFacade
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Extractor\AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor
-     */
     public function __construct(
         ErrorAdderInterface $errorAdder,
         MerchantRelationRequestToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade,
@@ -83,11 +77,6 @@ class CompanyAccountCompatibilityValidatorRule implements MerchantRelationValida
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isCompanyAccountCompatible(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): bool {

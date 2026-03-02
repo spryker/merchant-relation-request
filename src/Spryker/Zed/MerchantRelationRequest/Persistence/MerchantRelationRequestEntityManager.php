@@ -19,11 +19,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class MerchantRelationRequestEntityManager extends AbstractEntityManager implements MerchantRelationRequestEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function createMerchantRelationRequest(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer {
@@ -59,11 +54,6 @@ class MerchantRelationRequestEntityManager extends AbstractEntityManager impleme
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function updateMerchantRelationRequest(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer {
@@ -92,11 +82,6 @@ class MerchantRelationRequestEntityManager extends AbstractEntityManager impleme
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestDeleteCriteriaTransfer $merchantRelationRequestDeleteCriteriaTransfer
-     *
-     * @return void
-     */
     public function deleteMerchantRelationRequestCollection(
         MerchantRelationRequestDeleteCriteriaTransfer $merchantRelationRequestDeleteCriteriaTransfer
     ): void {
@@ -119,11 +104,6 @@ class MerchantRelationRequestEntityManager extends AbstractEntityManager impleme
         $merchantRelationRequestCollection->delete();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestToCompanyBusinessUnitDeleteCriteriaTransfer $merchantRelationRequestToCompanyBusinessUnitDeleteCriteriaTransfer
-     *
-     * @return void
-     */
     public function deleteMerchantRelationRequestToCompanyBusinessUnitCollection(
         MerchantRelationRequestToCompanyBusinessUnitDeleteCriteriaTransfer $merchantRelationRequestToCompanyBusinessUnitDeleteCriteriaTransfer
     ): void {

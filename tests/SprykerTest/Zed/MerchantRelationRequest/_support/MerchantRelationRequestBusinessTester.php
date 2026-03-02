@@ -45,17 +45,11 @@ class MerchantRelationRequestBusinessTester extends Actor
 {
     use _generated\MerchantRelationRequestBusinessTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureMerchantRelationRequestTablesAreEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getMerchantRelationRequestQuery());
     }
 
-    /**
-     * @return void
-     */
     public function ensureMerchantRelationshipTablesAreEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getMerchantRelationshipQuery());
@@ -117,11 +111,6 @@ class MerchantRelationRequestBusinessTester extends Actor
             ->setOwnerCompanyBusinessUnit($ownerCompanyBusinessUnit);
     }
 
-    /**
-     * @param int $length
-     *
-     * @return string
-     */
     public function generateRandomString(int $length): string
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -135,11 +124,6 @@ class MerchantRelationRequestBusinessTester extends Actor
         return $randomString;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return void
-     */
     public function assignCreateMerchantRelationRequestPermission(CompanyUserTransfer $companyUserTransfer): void
     {
         $permissionCollectionTransfer = (new PermissionCollectionBuilder())->build();
@@ -159,11 +143,6 @@ class MerchantRelationRequestBusinessTester extends Actor
         $this->assignCompanyRolesToCompanyUser($companyUserTransfer);
     }
 
-    /**
-     * @param string|null $merchantRelationRequestUuid
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function createMerchantRelationship(?string $merchantRelationRequestUuid = null): MerchantRelationshipTransfer
     {
         $merchantTransfer = $this->haveMerchant();
@@ -253,33 +232,21 @@ class MerchantRelationRequestBusinessTester extends Actor
         ];
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery
-     */
     public function getMerchantRelationRequestQuery(): SpyMerchantRelationRequestQuery
     {
         return SpyMerchantRelationRequestQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestToCompanyBusinessUnitQuery
-     */
     public function getMerchantRelationRequestToCompanyBusinessUnitQuery(): SpyMerchantRelationRequestToCompanyBusinessUnitQuery
     {
         return SpyMerchantRelationRequestToCompanyBusinessUnitQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     public function getMerchantRelationshipQuery(): SpyMerchantRelationshipQuery
     {
         return SpyMerchantRelationshipQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipToCompanyBusinessUnitQuery
-     */
     public function getMerchantRelationshipToCompanyBusinessUnitQuery(): SpyMerchantRelationshipToCompanyBusinessUnitQuery
     {
         return SpyMerchantRelationshipToCompanyBusinessUnitQuery::create();

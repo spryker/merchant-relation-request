@@ -12,18 +12,8 @@ use Generated\Shared\Transfer\CompanyUserTransfer;
 
 interface MerchantRelationRequestDeleterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return void
-     */
     public function deleteCompanyUserMerchantRelationRequests(CompanyUserTransfer $companyUserTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return void
-     */
     public function deleteCompanyBusinessUnitMerchantRelationRequests(
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
     ): void;

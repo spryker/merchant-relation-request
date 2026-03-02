@@ -23,9 +23,6 @@ class NotEmptyAssigneeBusinessUnitsInRequestValidatorRule implements MerchantRel
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;

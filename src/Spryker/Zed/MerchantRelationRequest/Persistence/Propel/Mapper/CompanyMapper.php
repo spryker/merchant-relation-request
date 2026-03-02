@@ -12,12 +12,6 @@ use Orm\Zed\Company\Persistence\SpyCompany;
 
 class CompanyMapper
 {
-    /**
-     * @param \Orm\Zed\Company\Persistence\SpyCompany $companyEntity
-     * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyTransfer
-     */
     public function mapCompanyEntityToCompanyTransfer(
         SpyCompany $companyEntity,
         CompanyTransfer $companyTransfer

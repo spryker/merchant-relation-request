@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\MerchantRelationRequestTransfer;
 
 interface MerchantRelationshipCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return void
-     */
     public function createMerchantRelationships(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): void;
 }

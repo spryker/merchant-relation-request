@@ -19,20 +19,11 @@ class CompanyBusinessUnitMapper
      */
     protected CompanyMapper $companyMapper;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\CompanyMapper $companyMapper
-     */
     public function __construct(CompanyMapper $companyMapper)
     {
         $this->companyMapper = $companyMapper;
     }
 
-    /**
-     * @param \Orm\Zed\CompanyBusinessUnit\Persistence\SpyCompanyBusinessUnit $companyBusinessUnitEntity
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitTransfer
-     */
     public function mapCompanyBusinessUnitEntityToCompanyBusinessUnitTransfer(
         SpyCompanyBusinessUnit $companyBusinessUnitEntity,
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer

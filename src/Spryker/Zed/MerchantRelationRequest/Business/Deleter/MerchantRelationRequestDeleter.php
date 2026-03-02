@@ -45,12 +45,6 @@ class MerchantRelationRequestDeleter implements MerchantRelationRequestDeleterIn
      */
     protected MerchantRelationRequestConfig $merchantRelationRequestConfig;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\MerchantRelationRequestRepositoryInterface $merchantRelationRequestRepository
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Extractor\MerchantRelationRequestExtractorInterface $merchantRelationRequestExtractor
-     * @param \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig $merchantRelationRequestConfig
-     */
     public function __construct(
         MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager,
         MerchantRelationRequestRepositoryInterface $merchantRelationRequestRepository,
@@ -63,11 +57,6 @@ class MerchantRelationRequestDeleter implements MerchantRelationRequestDeleterIn
         $this->merchantRelationRequestConfig = $merchantRelationRequestConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return void
-     */
     public function deleteCompanyUserMerchantRelationRequests(CompanyUserTransfer $companyUserTransfer): void
     {
         $merchantRelationRequestCriteriaTransfer = (new MerchantRelationRequestCriteriaTransfer())
@@ -87,11 +76,6 @@ class MerchantRelationRequestDeleter implements MerchantRelationRequestDeleterIn
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return void
-     */
     public function deleteCompanyBusinessUnitMerchantRelationRequests(
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
     ): void {
@@ -114,12 +98,6 @@ class MerchantRelationRequestDeleter implements MerchantRelationRequestDeleterIn
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     * @param int $readCollectionBatchSize
-     *
-     * @return void
-     */
     protected function executeDeleteCompanyUserMerchantRelationRequestsTransaction(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer,
         int $readCollectionBatchSize
@@ -145,13 +123,6 @@ class MerchantRelationRequestDeleter implements MerchantRelationRequestDeleterIn
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     * @param int $readCollectionBatchSize
-     *
-     * @return void
-     */
     protected function executeCompanyBusinessUnitMerchantRelationRequestsDeleteTransaction(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer,
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer,
@@ -185,11 +156,6 @@ class MerchantRelationRequestDeleter implements MerchantRelationRequestDeleterIn
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
-     *
-     * @return void
-     */
     protected function deleteMerchantRelationRequestRelatedEntities(
         MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
     ): void {

@@ -28,11 +28,6 @@ class MerchantRelationRequestValidator implements MerchantRelationRequestValidat
         $this->validatorRules = $validatorRules;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     public function validate(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
@@ -74,12 +69,6 @@ class MerchantRelationRequestValidator implements MerchantRelationRequestValidat
         return (bool)$initialErrorTransfers->count();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     protected function mergeErrors(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer,
         ErrorCollectionTransfer $errorCollectionTransfer

@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\AclEntityMetadataConfigTransfer;
 
 interface MerchantRelationRequestAclEntityConfigurationExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
-     *
-     * @return \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer
-     */
     public function expand(AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer): AclEntityMetadataConfigTransfer;
 }

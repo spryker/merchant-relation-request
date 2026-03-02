@@ -45,9 +45,6 @@ class DecisionNoteLengthValidatorRule implements MerchantRelationValidatorRuleIn
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -82,11 +79,6 @@ class DecisionNoteLengthValidatorRule implements MerchantRelationValidatorRuleIn
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isApplicable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         return $merchantRelationRequestTransfer->getDecisionNote() && in_array(
@@ -99,11 +91,6 @@ class DecisionNoteLengthValidatorRule implements MerchantRelationValidatorRuleIn
         );
     }
 
-    /**
-     * @param string $decisionNote
-     *
-     * @return bool
-     */
     protected function isDecisionNoteLengthValid(string $decisionNote): bool
     {
         return mb_strlen($decisionNote) >= static::DECISION_NOTE_MIN_LENGTH

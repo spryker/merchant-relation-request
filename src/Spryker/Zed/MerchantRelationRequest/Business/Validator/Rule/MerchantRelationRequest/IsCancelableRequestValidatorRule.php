@@ -41,11 +41,6 @@ class IsCancelableRequestValidatorRule extends AbstractStatusApplicableRequestVa
      */
     protected MerchantRelationRequestReaderInterface $merchantRelationRequestReader;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     * @param \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig $merchantRelationRequestConfig
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantRelationRequestReaderInterface $merchantRelationRequestReader
-     */
     public function __construct(
         ErrorAdderInterface $errorAdder,
         MerchantRelationRequestConfig $merchantRelationRequestConfig,
@@ -56,11 +51,6 @@ class IsCancelableRequestValidatorRule extends AbstractStatusApplicableRequestVa
         $this->merchantRelationRequestReader = $merchantRelationRequestReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isApplicable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         $newStatus = $merchantRelationRequestTransfer->getStatusOrFail();
@@ -103,11 +93,6 @@ class IsCancelableRequestValidatorRule extends AbstractStatusApplicableRequestVa
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isRequestCancelable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         return in_array(

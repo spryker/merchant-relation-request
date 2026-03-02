@@ -26,10 +26,6 @@ class MerchantRelationRequestReader implements MerchantRelationRequestReaderInte
      */
     protected MerchantRelationRequestExpanderInterface $merchantRelationRequestExpander;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\MerchantRelationRequestRepositoryInterface $merchantRelationRequestRepository
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Expander\MerchantRelationRequestExpanderInterface $merchantRelationRequestExpander
-     */
     public function __construct(
         MerchantRelationRequestRepositoryInterface $merchantRelationRequestRepository,
         MerchantRelationRequestExpanderInterface $merchantRelationRequestExpander
@@ -38,11 +34,6 @@ class MerchantRelationRequestReader implements MerchantRelationRequestReaderInte
         $this->merchantRelationRequestExpander = $merchantRelationRequestExpander;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     public function getMerchantRelationRequestCollection(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
     ): MerchantRelationRequestCollectionTransfer {
@@ -85,11 +76,6 @@ class MerchantRelationRequestReader implements MerchantRelationRequestReaderInte
         return $indexedMerchantRelationRequests;
     }
 
-    /**
-     * @param string $merchantRelationRequestUuid
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer|null
-     */
     public function findMerchantRelationRequestByUuid(string $merchantRelationRequestUuid): ?MerchantRelationRequestTransfer
     {
         $merchantRelationRequestCriteriaTransfer = (new MerchantRelationRequestCriteriaTransfer())

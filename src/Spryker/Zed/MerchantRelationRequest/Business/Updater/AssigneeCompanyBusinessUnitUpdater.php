@@ -33,11 +33,6 @@ class AssigneeCompanyBusinessUnitUpdater implements AssigneeCompanyBusinessUnitU
      */
     protected AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\MerchantRelationRequestRepositoryInterface $merchantRelationRequestRepository
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Extractor\AssigneeCompanyBusinessUnitExtractorInterface $assigneeCompanyBusinessUnitExtractor
-     */
     public function __construct(
         MerchantRelationRequestRepositoryInterface $merchantRelationRequestRepository,
         MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager,
@@ -48,11 +43,6 @@ class AssigneeCompanyBusinessUnitUpdater implements AssigneeCompanyBusinessUnitU
         $this->assigneeCompanyBusinessUnitExtractor = $assigneeCompanyBusinessUnitExtractor;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function updateAssigneeCompanyBusinessUnits(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer {

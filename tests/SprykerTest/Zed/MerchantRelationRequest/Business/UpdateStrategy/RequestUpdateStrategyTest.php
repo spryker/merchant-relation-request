@@ -44,9 +44,6 @@ class RequestUpdateStrategyTest extends Unit
      */
     protected MerchantRelationRequestBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testThrowMerchantRelationRequestNotFoundExceptionInRequestApprovalUpdateStrategy(): void
     {
         // Arrange
@@ -59,9 +56,6 @@ class RequestUpdateStrategyTest extends Unit
         $this->createRequestUpdateStrategyMock(RequestApprovalUpdateStrategy::class)->execute($merchantRelationRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowMerchantRelationRequestNotFoundExceptionInRequestCancelationUpdateStrategy(): void
     {
         // Arrange
@@ -74,9 +68,6 @@ class RequestUpdateStrategyTest extends Unit
         $this->createRequestUpdateStrategyMock(RequestCancelationUpdateStrategy::class)->execute($merchantRelationRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowMerchantRelationRequestNotFoundExceptionInRequestRejectionUpdateStrategy(): void
     {
         // Arrange
@@ -89,9 +80,6 @@ class RequestUpdateStrategyTest extends Unit
         $this->createRequestUpdateStrategyMock(RequestRejectionUpdateStrategy::class)->execute($merchantRelationRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowMerchantRelationRequestNotFoundExceptionInRequestPendingUpdateStrategy(): void
     {
         // Arrange

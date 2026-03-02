@@ -12,12 +12,6 @@ use Orm\Zed\Customer\Persistence\SpyCustomer;
 
 class CustomerMapper
 {
-    /**
-     * @param \Orm\Zed\Customer\Persistence\SpyCustomer $customerEntity
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function mapCustomerEntityToCustomerTransfer(
         SpyCustomer $customerEntity,
         CustomerTransfer $customerTransfer

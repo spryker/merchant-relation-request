@@ -20,33 +20,18 @@ use Spryker\Zed\Kernel\Communication\Controller\AbstractGatewayController;
  */
 class GatewayController extends AbstractGatewayController
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     public function getMerchantRelationRequestCollectionAction(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
     ): MerchantRelationRequestCollectionTransfer {
         return $this->getFacade()->getMerchantRelationRequestCollection($merchantRelationRequestCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     public function createMerchantRelationRequestCollectionAction(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
         return $this->getFacade()->createMerchantRelationRequestCollection($merchantRelationRequestCollectionRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     public function updateMerchantRelationRequestCollectionAction(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {

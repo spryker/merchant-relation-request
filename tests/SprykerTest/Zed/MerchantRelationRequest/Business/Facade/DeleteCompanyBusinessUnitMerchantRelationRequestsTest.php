@@ -41,9 +41,6 @@ class DeleteCompanyBusinessUnitMerchantRelationRequestsTest extends Unit
      */
     protected MerchantRelationRequestBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -51,9 +48,6 @@ class DeleteCompanyBusinessUnitMerchantRelationRequestsTest extends Unit
         $this->tester->ensureMerchantRelationRequestTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testRequiresIdCompanyBusinessUnitToBeSet(): void
     {
         // Assert
@@ -97,9 +91,6 @@ class DeleteCompanyBusinessUnitMerchantRelationRequestsTest extends Unit
         $this->assertSame(2, $this->tester->getMerchantRelationRequestToCompanyBusinessUnitQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testDeletesAssigneeCompanyBusinessUnit(): void
     {
         // Arrange
@@ -120,9 +111,6 @@ class DeleteCompanyBusinessUnitMerchantRelationRequestsTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testDeletesByChunks(): void
     {
         // Arrange

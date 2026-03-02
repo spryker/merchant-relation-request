@@ -19,9 +19,6 @@ use Spryker\Zed\MerchantRelationRequest\Communication\Expander\MerchantRelationR
  */
 class MerchantRelationRequestCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Communication\Expander\MerchantRelationRequestAclEntityConfigurationExpanderInterface
-     */
     public function createMerchantRelationRequestAclEntityConfigurationExpander(): MerchantRelationRequestAclEntityConfigurationExpanderInterface
     {
         return new MerchantRelationRequestAclEntityConfigurationExpander();

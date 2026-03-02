@@ -29,10 +29,6 @@ class ActiveMerchantWithApprovedAccessValidatorRule implements MerchantRelationV
      */
     protected MerchantReaderInterface $merchantReader;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantReaderInterface $merchantReader
-     */
     public function __construct(
         ErrorAdderInterface $errorAdder,
         MerchantReaderInterface $merchantReader

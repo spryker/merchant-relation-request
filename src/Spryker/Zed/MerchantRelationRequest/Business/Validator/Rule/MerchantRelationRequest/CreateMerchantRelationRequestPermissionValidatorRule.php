@@ -37,10 +37,6 @@ class CreateMerchantRelationRequestPermissionValidatorRule implements MerchantRe
      */
     protected MerchantRelationRequestToPermissionFacadeInterface $permissionFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     * @param \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToPermissionFacadeInterface $permissionFacade
-     */
     public function __construct(
         ErrorAdderInterface $errorAdder,
         MerchantRelationRequestToPermissionFacadeInterface $permissionFacade
@@ -70,11 +66,6 @@ class CreateMerchantRelationRequestPermissionValidatorRule implements MerchantRe
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return bool
-     */
     protected function hasPermission(CompanyUserTransfer $companyUserTransfer): bool
     {
         return $this->permissionFacade->can(

@@ -76,9 +76,6 @@ use Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestDependencyProvide
  */
 class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantRelationRequestReaderInterface
-     */
     public function createMerchantRelationRequestReader(): MerchantRelationRequestReaderInterface
     {
         return new MerchantRelationRequestReader(
@@ -87,9 +84,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Expander\MerchantRelationRequestExpanderInterface
-     */
     public function createMerchantRelationRequestExpander(): MerchantRelationRequestExpanderInterface
     {
         return new MerchantRelationRequestExpander(
@@ -100,9 +94,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Creator\MerchantRelationRequestCreatorInterface
-     */
     public function createMerchantRelationRequestCreator(): MerchantRelationRequestCreatorInterface
     {
         return new MerchantRelationRequestCreator(
@@ -114,9 +105,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Updater\MerchantRelationRequestUpdaterInterface
-     */
     public function createMerchantRelationRequestUpdater(): MerchantRelationRequestUpdaterInterface
     {
         return new MerchantRelationRequestUpdater(
@@ -128,9 +116,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Updater\AssigneeCompanyBusinessUnitUpdaterInterface
-     */
     public function createAssigneeCompanyBusinessUnitUpdater(): AssigneeCompanyBusinessUnitUpdaterInterface
     {
         return new AssigneeCompanyBusinessUnitUpdater(
@@ -140,17 +125,11 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Extractor\AssigneeCompanyBusinessUnitExtractorInterface
-     */
     public function createAssigneeCompanyBusinessUnitExtractor(): AssigneeCompanyBusinessUnitExtractorInterface
     {
         return new AssigneeCompanyBusinessUnitExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Creator\AssigneeCompanyBusinessUnitCreatorInterface
-     */
     public function createAssigneeCompanyBusinessUnitCreator(): AssigneeCompanyBusinessUnitCreatorInterface
     {
         return new AssigneeCompanyBusinessUnitCreator(
@@ -159,9 +138,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Deleter\MerchantRelationRequestDeleterInterface
-     */
     public function createMerchantRelationRequestDeleter(): MerchantRelationRequestDeleterInterface
     {
         return new MerchantRelationRequestDeleter(
@@ -172,9 +148,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Filter\MerchantRelationRequestFilterInterface
-     */
     public function createMerchantRelationRequestFilter(): MerchantRelationRequestFilterInterface
     {
         return new MerchantRelationRequestFilter(
@@ -182,17 +155,11 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Extractor\ErrorExtractorInterface
-     */
     public function createErrorExtractor(): ErrorExtractorInterface
     {
         return new ErrorExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\MerchantRelationRequestValidatorInterface
-     */
     public function createMerchantRelationRequestCreateValidator(): MerchantRelationRequestValidatorInterface
     {
         return new MerchantRelationRequestValidator(
@@ -230,9 +197,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\MerchantRelationRequestValidatorInterface
-     */
     public function createMerchantRelationRequestUpdateValidator(): MerchantRelationRequestValidatorInterface
     {
         return new MerchantRelationRequestValidator(
@@ -254,9 +218,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createCompanyAccountCompatibilityValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new CompanyAccountCompatibilityValidatorRule(
@@ -267,9 +228,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createEmptyDecisionNoteValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new EmptyDecisionNoteValidatorRule(
@@ -277,9 +235,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createNotEmptyAssigneeBusinessUnitsInRequestValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new NotEmptyAssigneeBusinessUnitsInRequestValidatorRule(
@@ -287,9 +242,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createPendingRequestStatusValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new PendingRequestStatusValidatorRule(
@@ -297,9 +249,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantRelationshipReaderInterface
-     */
     public function createMerchantRelationshipReader(): MerchantRelationshipReaderInterface
     {
         return new MerchantRelationshipReader(
@@ -307,9 +256,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createRequestNoteLengthValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new RequestNoteLengthValidatorRule(
@@ -317,9 +263,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createUniqueAssigneeBusinessUnitsInRequestValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new UniqueAssigneeBusinessUnitsInRequestValidatorRule(
@@ -327,9 +270,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface
-     */
     public function createErrorAdder(): ErrorAdderInterface
     {
         return new ErrorAdder();
@@ -351,9 +291,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::PLUGINS_MERCHANT_RELATION_REQUEST_POST_CREATE);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Updater\UpdateStrategy\MerchantRelationRequestUpdaterStrategyInterface
-     */
     public function createRequestApprovalUpdateStrategy(): MerchantRelationRequestUpdaterStrategyInterface
     {
         return new RequestApprovalUpdateStrategy(
@@ -364,9 +301,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Creator\MerchantRelationshipCreatorInterface
-     */
     public function createMerchantRelationshipCreator(): MerchantRelationshipCreatorInterface
     {
         return new MerchantRelationshipCreator(
@@ -374,9 +308,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Updater\UpdateStrategy\MerchantRelationRequestUpdaterStrategyInterface
-     */
     public function createRequestCancelationUpdateStrategy(): MerchantRelationRequestUpdaterStrategyInterface
     {
         return new RequestCancelationUpdateStrategy(
@@ -386,9 +317,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Updater\UpdateStrategy\MerchantRelationRequestUpdaterStrategyInterface
-     */
     public function createRequestRejectionUpdateStrategy(): MerchantRelationRequestUpdaterStrategyInterface
     {
         return new RequestRejectionUpdateStrategy(
@@ -398,9 +326,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Updater\UpdateStrategy\MerchantRelationRequestUpdaterStrategyInterface
-     */
     public function createRequestPendingUpdateStrategy(): MerchantRelationRequestUpdaterStrategyInterface
     {
         return new RequestPendingUpdateStrategy(
@@ -410,9 +335,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createDecisionNoteLengthValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new DecisionNoteLengthValidatorRule(
@@ -420,9 +342,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createIsApprovableRequestValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new IsApprovableRequestValidatorRule(
@@ -433,9 +352,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createIsCancelableRequestValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new IsCancelableRequestValidatorRule(
@@ -445,9 +361,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createCreateMerchantRelationRequestPermissionValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new CreateMerchantRelationRequestPermissionValidatorRule(
@@ -456,9 +369,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createActiveMerchantWithApprovedAccessValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new ActiveMerchantWithApprovedAccessValidatorRule(
@@ -467,9 +377,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantReaderInterface
-     */
     public function createMerchantReader(): MerchantReaderInterface
     {
         return new MerchantReader(
@@ -478,9 +385,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createIsRejectableRequestValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new IsRejectableRequestValidatorRule(
@@ -490,9 +394,6 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Validator\Rule\MerchantRelationRequest\MerchantRelationValidatorRuleInterface
-     */
     public function createIsAllowedToUpdateToPendingValidatorRule(): MerchantRelationValidatorRuleInterface
     {
         return new IsAllowedToUpdateToPendingValidatorRule(
@@ -503,17 +404,11 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Extractor\MerchantRelationRequestExtractorInterface
-     */
     public function createMerchantRelationRequestExtractor(): MerchantRelationRequestExtractorInterface
     {
         return new MerchantRelationRequestExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Business\Sender\RequestStatusChangeMailNotificationSenderInterface
-     */
     public function createRequestStatusChangeMailNotificationSender(): RequestStatusChangeMailNotificationSenderInterface
     {
         return new RequestStatusChangeMailNotificationSender($this->getMailFacade(), $this->getConfig());
@@ -527,49 +422,31 @@ class MerchantRelationRequestBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::PLUGINS_MERCHANT_RELATION_REQUEST_POST_UPDATE);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToMerchantRelationshipFacadeInterface
-     */
     public function getMerchantRelationshipFacade(): MerchantRelationRequestToMerchantRelationshipFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::FACADE_MERCHANT_RELATIONSHIP);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToCompanyBusinessUnitFacadeInterface
-     */
     public function getCompanyBusinessUnitFacade(): MerchantRelationRequestToCompanyBusinessUnitFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::FACADE_COMPANY_BUSINESS_UNIT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToCompanyUserFacadeInterface
-     */
     public function getCompanyUserFacade(): MerchantRelationRequestToCompanyUserFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::FACADE_COMPANY_USER);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToPermissionFacadeInterface
-     */
     public function getPermissionFacade(): MerchantRelationRequestToPermissionFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::FACADE_PERMISSION);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToMerchantFacadeInterface
-     */
     public function getMerchantFacade(): MerchantRelationRequestToMerchantFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::FACADE_MERCHANT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToMailFacadeInterface
-     */
     public function getMailFacade(): MerchantRelationRequestToMailFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::FACADE_MAIL);

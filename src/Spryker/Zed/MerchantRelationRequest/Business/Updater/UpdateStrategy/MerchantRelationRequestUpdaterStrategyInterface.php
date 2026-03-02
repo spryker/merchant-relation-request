@@ -11,18 +11,8 @@ use Generated\Shared\Transfer\MerchantRelationRequestTransfer;
 
 interface MerchantRelationRequestUpdaterStrategyInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     public function isApplicable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function execute(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer;

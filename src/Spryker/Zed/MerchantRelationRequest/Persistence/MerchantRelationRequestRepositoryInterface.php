@@ -12,20 +12,10 @@ use Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer;
 
 interface MerchantRelationRequestRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     public function getMerchantRelationRequestCollection(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
     ): MerchantRelationRequestCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return int
-     */
     public function countMerchantRelationRequests(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
     ): int;

@@ -18,9 +18,6 @@ class MerchantRelationRequestFilter implements MerchantRelationRequestFilterInte
      */
     protected ErrorExtractorInterface $errorExtractor;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Extractor\ErrorExtractorInterface $errorExtractor
-     */
     public function __construct(ErrorExtractorInterface $errorExtractor)
     {
         $this->errorExtractor = $errorExtractor;

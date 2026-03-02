@@ -41,9 +41,6 @@ class DeleteCompanyUserMerchantRelationRequestsTest extends Unit
      */
     protected MerchantRelationRequestBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -51,9 +48,6 @@ class DeleteCompanyUserMerchantRelationRequestsTest extends Unit
         $this->tester->ensureMerchantRelationRequestTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testRequiresIdCompanyUserToBeSet(): void
     {
         // Assert

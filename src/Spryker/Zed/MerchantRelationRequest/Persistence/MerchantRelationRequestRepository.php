@@ -86,11 +86,6 @@ class MerchantRelationRequestRepository extends AbstractRepository implements Me
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return int
-     */
     public function countMerchantRelationRequests(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
     ): int {
@@ -211,12 +206,6 @@ class MerchantRelationRequestRepository extends AbstractRepository implements Me
         return $merchantRelationRequestQuery;
     }
 
-    /**
-     * @param \Propel\Runtime\ActiveQuery\ModelCriteria $modelCriteria
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     protected function applyPagination(
         ModelCriteria $modelCriteria,
         PaginationTransfer $paginationTransfer
@@ -269,12 +258,6 @@ class MerchantRelationRequestRepository extends AbstractRepository implements Me
         return $modelCriteria;
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery $merchantRelationRequestQuery
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery
-     */
     protected function applyMerchantRelationRequestSearch(
         SpyMerchantRelationRequestQuery $merchantRelationRequestQuery,
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
@@ -324,9 +307,6 @@ class MerchantRelationRequestRepository extends AbstractRepository implements Me
         return $merchantRelationRequestQuery;
     }
 
-    /**
-     * @return string
-     */
     protected function getMerchantRelationRequestToCompanyBusinessUnitQuerySql(): string
     {
         /** @var literal-string $where */

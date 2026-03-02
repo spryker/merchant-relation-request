@@ -13,11 +13,6 @@ use Generated\Shared\Transfer\MerchantRelationRequestTransfer;
 
 interface MerchantRelationRequestEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function createMerchantRelationRequest(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer;
@@ -30,29 +25,14 @@ interface MerchantRelationRequestEntityManagerInterface
      */
     public function createAssigneeCompanyBusinessUnits(int $idMerchantRelationRequest, array $companyBusinessUnitIds): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     public function updateMerchantRelationRequest(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestDeleteCriteriaTransfer $merchantRelationRequestDeleteCriteriaTransfer
-     *
-     * @return void
-     */
     public function deleteMerchantRelationRequestCollection(
         MerchantRelationRequestDeleteCriteriaTransfer $merchantRelationRequestDeleteCriteriaTransfer
     ): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestToCompanyBusinessUnitDeleteCriteriaTransfer $merchantRelationRequestToCompanyBusinessUnitDeleteCriteriaTransfer
-     *
-     * @return void
-     */
     public function deleteMerchantRelationRequestToCompanyBusinessUnitCollection(
         MerchantRelationRequestToCompanyBusinessUnitDeleteCriteriaTransfer $merchantRelationRequestToCompanyBusinessUnitDeleteCriteriaTransfer
     ): void;

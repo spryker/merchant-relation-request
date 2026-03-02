@@ -66,11 +66,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
      */
     public const PLUGINS_MERCHANT_RELATION_REQUEST_POST_UPDATE = 'PLUGINS_MERCHANT_RELATION_REQUEST_POST_UPDATE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -87,11 +82,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_RELATIONSHIP, function (Container $container) {
@@ -101,11 +91,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyBusinessUnitFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_BUSINESS_UNIT, function (Container $container) {
@@ -115,11 +100,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT, function (Container $container) {
@@ -129,11 +109,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_USER, function (Container $container) {
@@ -143,11 +118,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPermissionFacade(Container $container): Container
     {
         $container->set(static::FACADE_PERMISSION, function (Container $container) {
@@ -157,11 +127,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMailFacade(Container $container): Container
     {
         $container->set(static::FACADE_MAIL, function (Container $container) {
@@ -173,11 +138,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationRequestExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATION_REQUEST_EXPANDER, function () {
@@ -195,11 +155,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationRequestPostCreatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATION_REQUEST_POST_CREATE, function () {
@@ -217,11 +172,6 @@ class MerchantRelationRequestDependencyProvider extends AbstractBundleDependency
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationRequestPostUpdatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATION_REQUEST_POST_UPDATE, function () {

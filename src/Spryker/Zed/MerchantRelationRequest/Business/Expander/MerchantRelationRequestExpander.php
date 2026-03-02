@@ -54,12 +54,6 @@ class MerchantRelationRequestExpander implements MerchantRelationRequestExpander
         $this->merchantRelationRequestExpanderPlugins = $merchantRelationRequestExpanderPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     public function expandMerchantRelationRequestCollection(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer,
         MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
@@ -85,11 +79,6 @@ class MerchantRelationRequestExpander implements MerchantRelationRequestExpander
         return $this->executeMerchantRelationRequestExpanderPlugins($merchantRelationRequestCollectionTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     public function expandWithAssigneeCompanyBusinessUnitRelations(
         MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
     ): MerchantRelationRequestCollectionTransfer {
@@ -108,11 +97,6 @@ class MerchantRelationRequestExpander implements MerchantRelationRequestExpander
         return $merchantRelationRequestCollectionTransfer->setMerchantRelationRequests($merchantRelationRequests);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     public function expandWithMerchantRelationshipRelations(
         MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
     ): MerchantRelationRequestCollectionTransfer {
@@ -196,11 +180,6 @@ class MerchantRelationRequestExpander implements MerchantRelationRequestExpander
         return $merchantRelationRequestUuids;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     protected function executeMerchantRelationRequestExpanderPlugins(
         MerchantRelationRequestCollectionTransfer $merchantRelationRequestCollectionTransfer
     ): MerchantRelationRequestCollectionTransfer {

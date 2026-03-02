@@ -31,11 +31,6 @@ class RequestPendingUpdateStrategy implements MerchantRelationRequestUpdaterStra
      */
     protected MerchantRelationRequestConfig $merchantRelationRequestConfig;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Persistence\MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantRelationRequestReaderInterface $merchantRelationRequestReader
-     * @param \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig $merchantRelationRequestConfig
-     */
     public function __construct(
         MerchantRelationRequestEntityManagerInterface $merchantRelationRequestEntityManager,
         MerchantRelationRequestReaderInterface $merchantRelationRequestReader,
@@ -46,11 +41,6 @@ class RequestPendingUpdateStrategy implements MerchantRelationRequestUpdaterStra
         $this->merchantRelationRequestConfig = $merchantRelationRequestConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     public function isApplicable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         return $merchantRelationRequestTransfer->getStatusOrFail() === SharedMerchantRelationRequestConfig::STATUS_PENDING;

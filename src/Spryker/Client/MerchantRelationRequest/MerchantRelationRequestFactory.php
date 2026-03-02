@@ -14,9 +14,6 @@ use Spryker\Client\MerchantRelationRequest\Zed\MerchantRelationRequestStubInterf
 
 class MerchantRelationRequestFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\MerchantRelationRequest\Zed\MerchantRelationRequestStubInterface
-     */
     public function createMerchantRelationRequestStub(): MerchantRelationRequestStubInterface
     {
         return new MerchantRelationRequestStub(
@@ -24,9 +21,6 @@ class MerchantRelationRequestFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\MerchantRelationRequest\Dependency\Client\MerchantRelationRequestToZedRequestClientInterface
-     */
     public function getZedRequestClient(): MerchantRelationRequestToZedRequestClientInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestDependencyProvider::CLIENT_ZED_REQUEST);

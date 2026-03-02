@@ -34,11 +34,6 @@ class MerchantRelationRequestAclEntityConfigurationExpander implements MerchantR
      */
     protected const OPERATION_MASK_DELETE = 0b1000;
 
-    /**
-     * @param \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
-     *
-     * @return \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer
-     */
     public function expand(AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer): AclEntityMetadataConfigTransfer
     {
         if (
@@ -59,11 +54,6 @@ class MerchantRelationRequestAclEntityConfigurationExpander implements MerchantR
         return $aclEntityMetadataConfigTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
-     *
-     * @return \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer
-     */
     protected function expandForMerchantRelationRequestModel(
         AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
     ): AclEntityMetadataConfigTransfer {
@@ -101,11 +91,6 @@ class MerchantRelationRequestAclEntityConfigurationExpander implements MerchantR
         return $aclEntityMetadataConfigTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
-     *
-     * @return \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer
-     */
     protected function expandForMerchantRelationRequestToCompanyBusinessUnitModel(
         AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
     ): AclEntityMetadataConfigTransfer {

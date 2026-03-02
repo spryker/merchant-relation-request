@@ -23,10 +23,6 @@ class MerchantReader implements MerchantReaderInterface
      */
     protected MerchantRelationRequestConfig $merchantRelationRequestConfig;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Dependency\Facade\MerchantRelationRequestToMerchantFacadeInterface $merchantFacade
-     * @param \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig $merchantRelationRequestConfig
-     */
     public function __construct(
         MerchantRelationRequestToMerchantFacadeInterface $merchantFacade,
         MerchantRelationRequestConfig $merchantRelationRequestConfig

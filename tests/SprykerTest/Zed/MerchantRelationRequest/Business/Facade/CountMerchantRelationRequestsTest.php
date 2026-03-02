@@ -32,18 +32,12 @@ class CountMerchantRelationRequestsTest extends Unit
      */
     protected MerchantRelationRequestBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
         $this->tester->ensureMerchantRelationRequestTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFiltersByMerchantRelationRequestId(): void
     {
         // Arrange
@@ -63,9 +57,6 @@ class CountMerchantRelationRequestsTest extends Unit
         $this->assertSame(1, $merchantRelationRequestsCount);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFiltersByUuid(): void
     {
         // Arrange
@@ -85,9 +76,6 @@ class CountMerchantRelationRequestsTest extends Unit
         $this->assertSame(1, $merchantRelationRequestsCount);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFiltersByStatus(): void
     {
         // Arrange
@@ -107,9 +95,6 @@ class CountMerchantRelationRequestsTest extends Unit
         $this->assertSame(1, $merchantRelationRequestsCount);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFiltersByCompanyId(): void
     {
         // Arrange
@@ -129,9 +114,6 @@ class CountMerchantRelationRequestsTest extends Unit
         $this->assertSame(1, $merchantRelationRequestsCount);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFiltersByMerchantId(): void
     {
         // Arrange
@@ -151,9 +133,6 @@ class CountMerchantRelationRequestsTest extends Unit
         $this->assertSame(1, $merchantRelationRequestsCount);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFiltersByCompanyUserId(): void
     {
         // Arrange
@@ -173,9 +152,6 @@ class CountMerchantRelationRequestsTest extends Unit
         $this->assertSame(1, $merchantRelationRequestsCount);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFiltersByOwnerCompanyBusinessUnitId(): void
     {
         // Arrange
@@ -195,9 +171,6 @@ class CountMerchantRelationRequestsTest extends Unit
         $this->assertSame(1, $merchantRelationRequestsCount);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByCreatedFrom(): void
     {
         // Arrange
@@ -219,9 +192,6 @@ class CountMerchantRelationRequestsTest extends Unit
         $this->assertSame(1, $merchantRelationRequestsCount);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterMerchantRelationRequestsByCreatedTo(): void
     {
         // Arrange

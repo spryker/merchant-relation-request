@@ -24,25 +24,16 @@ use Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\MerchantRelati
  */
 class MerchantRelationRequestPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery
-     */
     public function getMerchantRelationRequestQuery(): SpyMerchantRelationRequestQuery
     {
         return SpyMerchantRelationRequestQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestToCompanyBusinessUnitQuery
-     */
     public function getMerchantRelationRequestToCompanyBusinessUnitQuery(): SpyMerchantRelationRequestToCompanyBusinessUnitQuery
     {
         return SpyMerchantRelationRequestToCompanyBusinessUnitQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\MerchantRelationRequestMapper
-     */
     public function createMerchantRelationRequestMapper(): MerchantRelationRequestMapper
     {
         return new MerchantRelationRequestMapper(
@@ -52,17 +43,11 @@ class MerchantRelationRequestPersistenceFactory extends AbstractPersistenceFacto
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\MerchantMapper
-     */
     public function createMerchantMapper(): MerchantMapper
     {
         return new MerchantMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\CompanyUserMapper
-     */
     public function createCompanyUserMapper(): CompanyUserMapper
     {
         return new CompanyUserMapper(
@@ -70,9 +55,6 @@ class MerchantRelationRequestPersistenceFactory extends AbstractPersistenceFacto
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\CompanyBusinessUnitMapper
-     */
     public function createCompanyBusinessUnitMapper(): CompanyBusinessUnitMapper
     {
         return new CompanyBusinessUnitMapper(
@@ -80,17 +62,11 @@ class MerchantRelationRequestPersistenceFactory extends AbstractPersistenceFacto
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\CompanyMapper
-     */
     public function createCompanyMapper(): CompanyMapper
     {
         return new CompanyMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequest\Persistence\Propel\Mapper\CustomerMapper
-     */
     public function createCustomerMapper(): CustomerMapper
     {
         return new CustomerMapper();

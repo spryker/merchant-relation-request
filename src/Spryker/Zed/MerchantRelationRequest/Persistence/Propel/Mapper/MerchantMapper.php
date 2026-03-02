@@ -12,12 +12,6 @@ use Orm\Zed\Merchant\Persistence\SpyMerchant;
 
 class MerchantMapper
 {
-    /**
-     * @param \Orm\Zed\Merchant\Persistence\SpyMerchant $merchantEntity
-     * @param \Generated\Shared\Transfer\MerchantTransfer $merchantTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantTransfer
-     */
     public function mapMerchantEntityToMerchantTransfer(
         SpyMerchant $merchantEntity,
         MerchantTransfer $merchantTransfer

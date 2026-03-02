@@ -43,9 +43,6 @@ class RequestNoteLengthValidatorRule implements MerchantRelationValidatorRuleInt
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -80,11 +77,6 @@ class RequestNoteLengthValidatorRule implements MerchantRelationValidatorRuleInt
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param string $requestNote
-     *
-     * @return bool
-     */
     protected function isRequestNoteLengthValid(string $requestNote): bool
     {
         return mb_strlen($requestNote) >= static::REQUEST_NOTE_MIN_LENGTH
