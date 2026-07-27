@@ -47,13 +47,14 @@ class MerchantRelationRequestRepository extends AbstractRepository implements Me
         /** @var \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery $merchantRelationRequestQuery */
         $merchantRelationRequestQuery = $this->getFactory()->getMerchantRelationRequestQuery();
 
-        // @phpstan-ignore-next-line
         $merchantRelationRequestQuery
             ->joinWithMerchant()
             ->joinWithCompanyUser()
             ->useCompanyUserQuery()
                 ->joinWithCustomer()
-            ->endUse()
+            ->endUse();
+
+        $merchantRelationRequestQuery
             ->joinWithCompanyBusinessUnit()
             ->useCompanyBusinessUnitQuery()
                 ->joinWithCompany()
