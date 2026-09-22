@@ -16,6 +16,7 @@
         "spryker/mail": "^4.6.0",
         "spryker/mail-extension": "^1.0.0",
         "spryker/merchant": "^3.8.0",
+        "spryker/merchant-extension": "^1.4.0",
         "spryker/merchant-relation-request-extension": "^1.0.0",
         "spryker/merchant-relationship": "^1.12.0",
         "spryker/permission": "^1.0.0",
@@ -32,6 +33,9 @@
         "spryker/propel": "*",
         "spryker/store": "*",
         "spryker/testify": "*"
+    },
+    "suggest": {
+        "spryker/api-platform": "Required to expose the merchant relation request Backend API fields; without it the resource schema is never discovered."
     },
     "autoload": {
         "psr-4": {

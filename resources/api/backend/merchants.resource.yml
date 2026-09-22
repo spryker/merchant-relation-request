@@ -1,0 +1,16 @@
+resource:
+    name: Merchants
+    shortName: merchants
+
+    properties:
+        isOpenForRelationRequest:
+            type: boolean
+            nullable: true
+            writable: true
+            readable: true
+            required: false
+            description: >-
+                Whether the merchant accepts relation requests from customers on the storefront. Left out of
+                the payload, it keeps its current value rather than resetting to a default.
+            openapiContext:
+                example: true
