@@ -119,6 +119,7 @@ class MerchantRelationRequestUpdater implements MerchantRelationRequestUpdaterIn
     protected function executeUpdateMerchantRelationRequestCollectionTransaction(
         ArrayObject $merchantRelationRequestTransfers
     ): ArrayObject {
+        /** @var \ArrayObject<array-key, \Generated\Shared\Transfer\MerchantRelationRequestTransfer> $persistedMerchantRelationRequestTransfers */
         $persistedMerchantRelationRequestTransfers = new ArrayObject();
 
         foreach ($merchantRelationRequestTransfers as $entityIdentifier => $merchantRelationRequestTransfer) {

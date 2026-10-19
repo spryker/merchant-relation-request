@@ -118,6 +118,7 @@ class MerchantRelationRequestCreator implements MerchantRelationRequestCreatorIn
     protected function executeCreateMerchantRelationRequestCollectionTransaction(
         ArrayObject $merchantRelationRequestTransfers
     ): ArrayObject {
+        /** @var \ArrayObject<array-key, \Generated\Shared\Transfer\MerchantRelationRequestTransfer> $persistedMerchantRelationRequestTransfers */
         $persistedMerchantRelationRequestTransfers = new ArrayObject();
 
         foreach ($merchantRelationRequestTransfers as $entityIdentifier => $merchantRelationRequestTransfer) {

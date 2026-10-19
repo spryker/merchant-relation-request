@@ -52,7 +52,9 @@ class MerchantRelationRequestFilter implements MerchantRelationRequestFilterInte
         $errorTransfers = $merchantRelationRequestCollectionResponseTransfer->getErrors();
         $erroredEntityIdentifiers = $this->errorExtractor->extractEntityIdentifiersFromErrorTransfers($errorTransfers);
 
+        /** @var \ArrayObject<array-key, \Generated\Shared\Transfer\MerchantRelationRequestTransfer> $validMerchantRelationRequestTransfers */
         $validMerchantRelationRequestTransfers = new ArrayObject();
+        /** @var \ArrayObject<array-key, \Generated\Shared\Transfer\MerchantRelationRequestTransfer> $invalidMerchantRelationRequestTransfers */
         $invalidMerchantRelationRequestTransfers = new ArrayObject();
 
         foreach ($merchantRelationRequestCollectionResponseTransfer->getMerchantRelationRequests() as $entityIdentifier => $merchantRelationRequestTransfer) {
