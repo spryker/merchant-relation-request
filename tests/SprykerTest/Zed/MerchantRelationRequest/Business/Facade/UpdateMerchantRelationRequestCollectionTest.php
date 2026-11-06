@@ -178,6 +178,30 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_REJECTED)->count());
     }
 
+    public function testGivenAPendingRequestWithAssigneeBusinessUnitsWhenRejectedThenNoMerchantRelationshipIsCreated(): void
+    {
+        // Arrange
+        $merchantRelationRequestTransfer = $this->tester->createStatusSpecificRequest(static::STATUS_PENDING);
+        $rejectedMerchantRelationRequestTransfer = (new MerchantRelationRequestTransfer())
+            ->setUuid($merchantRelationRequestTransfer->getUuid())
+            ->setStatus(static::STATUS_REJECTED)
+            ->setAssigneeCompanyBusinessUnits($merchantRelationRequestTransfer->getAssigneeCompanyBusinessUnits());
+
+        $merchantRelationRequestCollectionRequestTransfer = (new MerchantRelationRequestCollectionRequestTransfer())
+            ->setMerchantRelationRequests(new ArrayObject([$rejectedMerchantRelationRequestTransfer]))
+            ->setIsTransactional(false);
+
+        // Act
+        $merchantRelationRequestCollectionResponseTransfer = $this->tester->getFacade()
+            ->updateMerchantRelationRequestCollection($merchantRelationRequestCollectionRequestTransfer);
+
+        // Assert
+        $this->assertEmpty($merchantRelationRequestCollectionResponseTransfer->getErrors());
+        $this->assertSame(1, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_REJECTED)->count());
+        $this->assertSame(0, $this->tester->getMerchantRelationshipQuery()->count());
+        $this->assertSame(0, $this->tester->getMerchantRelationshipToCompanyBusinessUnitQuery()->count());
+    }
+
     public function testShouldApproveMerchantRelationRequestInPersistence(): void
     {
         // Arrange
