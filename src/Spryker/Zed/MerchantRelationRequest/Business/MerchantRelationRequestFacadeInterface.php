@@ -40,10 +40,6 @@ interface MerchantRelationRequestFacadeInterface
      * - Returns `MerchantRelationRequestCollectionTransfer` filled with found merchant relation requests.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
      */
     public function getMerchantRelationRequestCollection(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
@@ -64,10 +60,6 @@ interface MerchantRelationRequestFacadeInterface
      * - Returns the number of found entities.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return int
      */
     public function countMerchantRelationRequests(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
@@ -97,10 +89,6 @@ interface MerchantRelationRequestFacadeInterface
      * - Returns `MerchantRelationRequestCollectionResponseTransfer` with persisted merchant relation requests and errors if any occurred.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
      */
     public function createMerchantRelationRequestCollection(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
@@ -116,6 +104,8 @@ interface MerchantRelationRequestFacadeInterface
      * - Validates merchant relation request existence using `MerchantRelationRequestTransfer.uuid`.
      * - Validates that decision notes are not exceeding length limit.
      * - Validates that provided merchant relation request status meets required criteria.
+     * - If status is changed to "canceled" and `MerchantRelationRequestTransfer.companyUser` is set, validates that the merchant relation request belongs to this company user.
+     * - If status is changed to "canceled" and `MerchantRelationRequestTransfer.companyUser` is not set, skips the ownership check. Intended for Back Office callers only.
      * - Uses `MerchantRelationRequestCollectionRequestTransfer.isTransactional` for transactional operation.
      * - Stores updated merchant relation requests at Persistence.
      * - Stores updated assignee company business units at Persistence.
@@ -125,10 +115,6 @@ interface MerchantRelationRequestFacadeInterface
      * - Returns `MerchantRelationRequestCollectionResponseTransfer` with persisted merchant relation requests and errors if any occurred.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
      */
     public function updateMerchantRelationRequestCollection(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
@@ -141,10 +127,6 @@ interface MerchantRelationRequestFacadeInterface
      * - Deletes merchant relation request to company business unit entities related to deleted merchant relation requests.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return void
      */
     public function deleteCompanyUserMerchantRelationRequests(CompanyUserTransfer $companyUserTransfer): void;
 
@@ -156,10 +138,6 @@ interface MerchantRelationRequestFacadeInterface
      * - Deletes assigned merchant relation request to company business unit entities related to provided company business unit.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return void
      */
     public function deleteCompanyBusinessUnitMerchantRelationRequests(
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
@@ -174,10 +152,6 @@ interface MerchantRelationRequestFacadeInterface
      * - Sends a notification to the company user who initiated the request to the merchant that the request status has been changed.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer
-     *
-     * @return void
      */
     public function sendRequestStatusChangeMailNotification(
         MerchantRelationRequestCollectionResponseTransfer $merchantRelationRequestCollectionResponseTransfer

@@ -126,9 +126,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
      */
     protected const GLOSSARY_KEY_INCOMPATIBLE_COMPANY_ACCOUNT = 'merchant_relation_request.validation.incompatible_company_account';
 
-    /**
-     * @var \SprykerTest\Zed\MerchantRelationRequest\MerchantRelationRequestBusinessTester
-     */
     protected MerchantRelationRequestBusinessTester $tester;
 
     protected function setUp(): void
@@ -389,11 +386,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
 
     /**
      * @dataProvider mandatoryFieldsDataProvider
-     *
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     * @param string $exceptionMessage
-     *
-     * @return void
      */
     public function testShouldRequireMandatoryFields(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer,
@@ -658,6 +650,55 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
         );
     }
 
+    public function testShouldValidateIsCancelableRequestValidatorRuleWithCompanyUserOfAnotherCompany(): void
+    {
+        // Arrange
+        $merchantRelationRequestTransfer = $this->tester->createStatusSpecificRequest(static::STATUS_PENDING);
+        $anotherCompanyUserTransfer = $this->tester->createStatusSpecificRequest(static::STATUS_PENDING)->getCompanyUserOrFail();
+        $merchantRelationRequest = (new MerchantRelationRequestTransfer())
+            ->setUuid($merchantRelationRequestTransfer->getUuid())
+            ->setStatus(static::STATUS_CANCELED)
+            ->setCompanyUser($anotherCompanyUserTransfer);
+
+        $merchantRelationRequestCollectionRequestTransfer = (new MerchantRelationRequestCollectionRequestTransfer())
+            ->setMerchantRelationRequests(new ArrayObject([$merchantRelationRequest]))
+            ->setIsTransactional(true);
+
+        // Act
+        $merchantRelationRequestCollectionResponseTransfer = $this->tester->getFacade()
+            ->updateMerchantRelationRequestCollection($merchantRelationRequestCollectionRequestTransfer);
+
+        // Assert
+        $this->assertCount(1, $merchantRelationRequestCollectionResponseTransfer->getErrors());
+        $this->assertSame(
+            static::GLOSSARY_KEY_REQUEST_NOT_FOUND,
+            $merchantRelationRequestCollectionResponseTransfer->getErrors()->offsetGet(0)->getMessage(),
+        );
+        $this->assertSame(0, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_CANCELED)->count());
+    }
+
+    public function testShouldCancelMerchantRelationRequestOfTheRequestingCompanyUser(): void
+    {
+        // Arrange
+        $merchantRelationRequestTransfer = $this->tester->createStatusSpecificRequest(static::STATUS_PENDING);
+        $merchantRelationRequest = (new MerchantRelationRequestTransfer())
+            ->setUuid($merchantRelationRequestTransfer->getUuid())
+            ->setStatus(static::STATUS_CANCELED)
+            ->setCompanyUser($merchantRelationRequestTransfer->getCompanyUserOrFail());
+
+        $merchantRelationRequestCollectionRequestTransfer = (new MerchantRelationRequestCollectionRequestTransfer())
+            ->setMerchantRelationRequests(new ArrayObject([$merchantRelationRequest]))
+            ->setIsTransactional(true);
+
+        // Act
+        $merchantRelationRequestCollectionResponseTransfer = $this->tester->getFacade()
+            ->updateMerchantRelationRequestCollection($merchantRelationRequestCollectionRequestTransfer);
+
+        // Assert
+        $this->assertEmpty($merchantRelationRequestCollectionResponseTransfer->getErrors());
+        $this->assertSame(1, $this->tester->getMerchantRelationRequestQuery()->filterByStatus(static::STATUS_CANCELED)->count());
+    }
+
     public function testShouldValidateIsAllowedToUpdateToPendingValidatorRuleWithFakeUuid(): void
     {
         // Arrange
@@ -914,8 +955,6 @@ class UpdateMerchantRelationRequestCollectionTest extends Unit
 
     /**
      * @param array<string, string|int> $seed
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
      */
     protected function createDummyMerchantRelationRequest(array $seed): MerchantRelationRequestTransfer
     {

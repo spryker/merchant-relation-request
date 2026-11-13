@@ -26,19 +26,10 @@ class IsCancelableRequestValidatorRule extends AbstractStatusApplicableRequestVa
      */
     protected const GLOSSARY_KEY_REQUEST_NOT_FOUND = 'merchant_relation_request.validation.not_found';
 
-    /**
-     * @var \Spryker\Zed\MerchantRelationRequest\Business\Validator\Util\ErrorAdderInterface
-     */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @var \Spryker\Zed\MerchantRelationRequest\MerchantRelationRequestConfig
-     */
     protected MerchantRelationRequestConfig $merchantRelationRequestConfig;
 
-    /**
-     * @var \Spryker\Zed\MerchantRelationRequest\Business\Reader\MerchantRelationRequestReaderInterface
-     */
     protected MerchantRelationRequestReaderInterface $merchantRelationRequestReader;
 
     public function __construct(
@@ -59,12 +50,7 @@ class IsCancelableRequestValidatorRule extends AbstractStatusApplicableRequestVa
     }
 
     /**
-     * @param string|int $entityIdentifier
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
      * @param array<\Generated\Shared\Transfer\MerchantRelationRequestTransfer> $existingMerchantRelationRequests
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     *
-     * @return void
      */
     protected function validateRequest(
         int|string $entityIdentifier,
@@ -74,7 +60,7 @@ class IsCancelableRequestValidatorRule extends AbstractStatusApplicableRequestVa
     ): void {
         $persistedMerchantRelationRequest = $existingMerchantRelationRequests[$merchantRelationRequestTransfer->getUuidOrFail()] ?? null;
 
-        if (!$persistedMerchantRelationRequest) {
+        if (!$persistedMerchantRelationRequest || !$this->isRequestOwnedByCompanyUser($persistedMerchantRelationRequest, $merchantRelationRequestTransfer)) {
             $this->errorAdder->addError(
                 $errorCollectionTransfer,
                 $entityIdentifier,
@@ -91,6 +77,22 @@ class IsCancelableRequestValidatorRule extends AbstractStatusApplicableRequestVa
                 static::GLOSSARY_KEY_REQUEST_CANT_BE_CANCELED,
             );
         }
+    }
+
+    protected function isRequestOwnedByCompanyUser(
+        MerchantRelationRequestTransfer $persistedMerchantRelationRequestTransfer,
+        MerchantRelationRequestTransfer $merchantRelationRequestTransfer
+    ): bool {
+        $companyUserTransfer = $merchantRelationRequestTransfer->getCompanyUser();
+
+        if (!$companyUserTransfer) {
+            return true;
+        }
+
+        $idCompanyUser = $companyUserTransfer->getIdCompanyUser();
+
+        return $idCompanyUser !== null
+            && $persistedMerchantRelationRequestTransfer->getCompanyUser()?->getIdCompanyUser() === $idCompanyUser;
     }
 
     protected function isRequestCancelable(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
