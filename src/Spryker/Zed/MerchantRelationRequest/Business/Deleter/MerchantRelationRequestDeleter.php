@@ -118,9 +118,8 @@ class MerchantRelationRequestDeleter implements MerchantRelationRequestDeleterIn
             $this->deleteMerchantRelationRequestRelatedEntities($merchantRelationRequestCollectionTransfer);
 
             $offset += $readCollectionBatchSize;
-        } while (
-            count($merchantRelationRequestCollectionTransfer->getMerchantRelationRequests()) !== 0
-        );
+            $hasNextBatch = count($merchantRelationRequestCollectionTransfer->getMerchantRelationRequests()) !== 0;
+        } while ($hasNextBatch);
     }
 
     protected function executeCompanyBusinessUnitMerchantRelationRequestsDeleteTransaction(
@@ -151,9 +150,8 @@ class MerchantRelationRequestDeleter implements MerchantRelationRequestDeleterIn
             $this->deleteMerchantRelationRequestRelatedEntities($merchantRelationRequestCollectionTransfer);
 
             $offset += $readCollectionBatchSize;
-        } while (
-            count($merchantRelationRequestCollectionTransfer->getMerchantRelationRequests()) !== 0
-        );
+            $hasNextBatch = count($merchantRelationRequestCollectionTransfer->getMerchantRelationRequests()) !== 0;
+        } while ($hasNextBatch);
     }
 
     protected function deleteMerchantRelationRequestRelatedEntities(
